@@ -18,58 +18,65 @@
       clickMode="push"
     ></vue-particles>-->
 
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About Me</router-link>|
-      <router-link to="/books">Books</router-link>|
-      <router-link to="/links">Links</router-link>|
-      <router-link to="/contact">Contact</router-link>
-    </div>-->
+    <header class="header-main">
+      <div class="brand">
+        <img src="./assets/img/logo-1.png" alt>
+        <span>Radoslav Tomas</span>
+      </div>
 
-    <label for="locale">language</label>
-    <select v-model="locale">
-      <option>en</option>
-      <option>ja</option>
-    </select>
+      <Navigation/>
+    </header>
 
     <router-view/>
   </div>
 </template>
 
 <script>
+import Navigation from "@/components/Navigation.vue";
+
 export default {
   data() {
     return {
-      locale: "en"
+      //
     };
   },
-  watch: {
-    locale(val) {
-      this.$i18n.locale = val;
-    }
+
+  components: {
+    Navigation
   }
 };
 </script>
 
 
 <style lang="scss">
+body {
+  margin: 0;
+  min-height: 100vh;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#nav {
+  min-height: 100%;
   position: relative;
-  z-index: 999;
-  // padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+}
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #bada55;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  img {
+    width: 50px;
+  }
+  span {
+    font-size: 1.8em;
   }
 }
 #particles-js {

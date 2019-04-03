@@ -9,25 +9,19 @@
   "en": {
     "home": "Home"
   },
-  "ja": {
-    "home": "こんにちは"
+  "sk": {
+    "home": "Domov"
   }
 }
 </i18n>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "home",
   data() {
     return {
       //
     };
-  },
-  components: {
-    // HelloWorld
   }
 };
 </script>
