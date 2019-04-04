@@ -77,6 +77,11 @@ body {
 .brand {
   display: flex;
   align-items: center;
+  justify-content: center;
+  a {
+    display: block;
+    height: 50px;
+  }
   img {
     width: 50px;
   }
@@ -100,8 +105,8 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  // height: calc(100vh - 94px);
-  z-index: -1;
+  height: calc(100vh - 94px);
+  z-index: 1;
 }
 
 .btn {
