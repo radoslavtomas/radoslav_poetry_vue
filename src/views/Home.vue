@@ -1,16 +1,43 @@
 <template>
   <div class="home">
-    <h1>{{ $t("home") }}</h1>
+    <vue-particles
+      color="#fff"
+      :particleOpacity="0.7"
+      :particlesNumber="120"
+      shapeType="circle"
+      :particleSize="4"
+      linesColor="#dedede"
+      :linesWidth="3"
+      :lineLinked="true"
+      :lineOpacity="0.6"
+      :linesDistance="150"
+      :moveSpeed="5"
+      :hoverEffect="true"
+      hoverMode="grab"
+      :clickEffect="true"
+      clickMode="push"
+    ></vue-particles>
+    <h1>{{ $t("home.name") }}</h1>
+    <h5>{{ $t("home.desc") }}</h5>
+    <nav class="home-cta">
+      <router-link class="btn" to="/books">Find out more</router-link>
+    </nav>
   </div>
 </template>
 
 <i18n>
 {
   "en": {
-    "home": "Home"
+    "home": {
+      "name": "Radoslav Tomas",
+      "desc": "poet"
+    }
   },
   "sk": {
-    "home": "Domov"
+    "home": {
+      "name": "Radoslav Tomáš",
+      "desc": "básnik"
+    }
   }
 }
 </i18n>
@@ -25,3 +52,24 @@ export default {
   }
 };
 </script>
+
+<style scoped lang="scss">
+.home {
+  position: relative;
+}
+h1 {
+  font-size: 54px;
+  font-weight: 600;
+  margin-top: 70px;
+  font-family: "Poiret One", cursive;
+}
+h5 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Poiret One", cursive;
+}
+.home-cta {
+  margin-top: 100px;
+}
+</style>
+

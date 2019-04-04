@@ -20,7 +20,9 @@
 
     <header class="header-main">
       <div class="brand">
-        <img src="./assets/img/logo-1.png" alt>
+        <a href="https://radoslavtomas.com">
+          <img :src="logo" alt="logo" @mouseenter="logo = logo2" @mouseleave="logo = logo1">
+        </a>
         <span>Radoslav Tomas</span>
       </div>
 
@@ -37,7 +39,9 @@ import Navigation from "@/components/Navigation.vue";
 export default {
   data() {
     return {
-      //
+      logo: "/assets/img/logo-1.png",
+      logo1: "/assets/img/logo-1.png",
+      logo2: "/assets/img/logo-2.png"
     };
   },
 
@@ -67,7 +71,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #bada55;
+  // background-color: #bada55;
 }
 .brand {
   display: flex;
@@ -76,7 +80,18 @@ body {
     width: 50px;
   }
   span {
+    font-family: "Poiret One", cursive;
+    font-weight: 600;
     font-size: 1.8em;
+    margin-left: 15px;
+
+    @media (max-width: 470px) {
+      font-size: 1.4em;
+    }
+
+    @media (max-width: 350px) {
+      display: none;
+    }
   }
 }
 #particles-js {
@@ -85,5 +100,14 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: -1;
+}
+
+.btn {
+  padding: 15px 25px;
+  color: #2c3e50;
+  border: 1px solid #b5b5b5;
+  border-radius: 30px;
+  text-decoration: none;
 }
 </style>

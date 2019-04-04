@@ -1,10 +1,10 @@
 <template>
   <nav id="nav-main">
-    <div v-if="windowWidth >= 840" class="nav-links">
+    <div class="nav-links">
       <router-link v-for="link in links" :key="link.desc" :to="link.to">{{ $t(link.desc) }}</router-link>
       <Localization/>
     </div>
-    <div v-if="open && windowWidth < 840" class="nav-links nav-mobile">
+    <div v-if="open" class="nav-links nav-mobile">
       <a
         v-for="link in links"
         :key="link.desc"
@@ -138,6 +138,10 @@ export default {
     }
   }
 
+  @media (max-width: 840px) {
+    display: none;
+  }
+
   &.nav-mobile {
     position: absolute;
     top: 0;
@@ -150,6 +154,10 @@ export default {
     flex-direction: column;
     z-index: 10;
     background-color: #fff;
+
+    @media (min-width: 840px) {
+      display: none;
+    }
 
     a {
       display: block;
