@@ -12,12 +12,10 @@
       :lineOpacity="0.6"
       :linesDistance="150"
       :moveSpeed="5"
-      :hoverEffect="true"
-      hoverMode="grab"
-      :clickEffect="true"
-      clickMode="push"
     ></vue-particles>
-    <h1>{{ $t("home.name") }}</h1>
+    <h1>
+      <span class="gradient">{{ $t("home.name") }}</span>
+    </h1>
     <h5>{{ $t("home.desc") }}</h5>
     <nav class="home-cta">
       <router-link class="btn" to="/books">Find out more</router-link>
@@ -60,7 +58,7 @@ export default {
 h1 {
   font-size: 54px;
   font-weight: 600;
-  margin-top: 70px;
+  padding: 70px 15px 0 15px;
   font-family: "Poiret One", cursive;
 }
 h5 {
@@ -69,7 +67,7 @@ h5 {
   font-family: "Poiret One", cursive;
 }
 .home-cta {
-  margin-top: 100px;
+  margin-top: 70px;
 }
 </style>
 

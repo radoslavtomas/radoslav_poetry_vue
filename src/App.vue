@@ -51,11 +51,12 @@ export default {
 };
 </script>
 
-
+#50a5a9
 <style lang="scss">
 body {
   margin: 0;
   min-height: 100vh;
+  // background-image: linear-gradient(to top, #badec1, #93d4ef);
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -99,15 +100,48 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  // height: calc(100vh - 94px);
   z-index: -1;
 }
 
 .btn {
   padding: 15px 25px;
-  color: #2c3e50;
-  border: 1px solid #b5b5b5;
+  color: #fff;
+  font-weight: 600;
+  border: 1px solid darken(#78c7ca, 5%);
   border-radius: 30px;
   text-decoration: none;
+  background-color: #78c7ca;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, #78c7ca),
+    color-stop(1, #55af83)
+  );
+  &:hover {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(1, #78c7ca),
+      color-stop(0, #55af83)
+    );
+  }
+}
+.gradient {
+  display: inline-block;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, #4554a9),
+    color-stop(0.5, #bb528a),
+    color-stop(1, #24802e)
+  );
+  background: -o-linear-gradient(transparent, transparent);
+  color: #434cf9;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 </style>
