@@ -1,5 +1,20 @@
 <template>
   <div class="books">
-    <h1>Books</h1>
+    <HeroImg image="/assets/img/books.jpg" title="Books"/>
   </div>
 </template>
+
+<script>
+import HeroImg from "@/components/HeroImg.vue";
+
+export default {
+  data() {
+    return {
+      //
+    };
+  },
+  components: {
+    HeroImg
+  }
+};
+</script>
