@@ -92,7 +92,7 @@ export default {
   z-index: 5;
 }
 .hero-landing {
-  padding: 50px 10px;
+  padding: 80px 10px 50px 10px;
   position: relative;
   z-index: 5;
 }

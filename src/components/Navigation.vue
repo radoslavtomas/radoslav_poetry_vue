@@ -123,7 +123,8 @@ export default {
   align-items: center;
 
   a {
-    font-weight: bold;
+    // font-weight: bold;
+    font-size: 18px;
     color: #2c3e50;
     text-decoration: none;
     margin-right: 15px;

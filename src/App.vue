@@ -53,13 +53,14 @@ export default {
 
 #50a5a9
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Poiret+One|Fira+Sans:400,500");
 body {
   margin: 0;
   min-height: 100vh;
   // background-image: linear-gradient(to top, #badec1, #93d4ef);
 }
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Fira Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -148,5 +149,29 @@ body {
   color: #434cf9;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+}
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 15px;
+}
+.text-left {
+  text-align: left;
+}
+.simple-text {
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    margin-block-start: 1.2em;
+    margin-block-end: 1.2em;
+  }
+
+  a {
+    color: #b969a0;
+    &:hover {
+      color: darken(#b969a0, 5%);
+    }
+  }
 }
 </style>
