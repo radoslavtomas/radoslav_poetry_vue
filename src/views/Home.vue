@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section class="full-height">
     <div class="home">
       <vue-particles
         color="#fff"
@@ -24,7 +24,7 @@
     <div class="hero-landing">
       <HeroImg image="/assets/img/about.jpg"/>
     </div>
-  </div>
+  </section>
 </template>
 
 <i18n>

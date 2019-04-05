@@ -1,11 +1,11 @@
 <template>
-  <div class="about">
+  <section class="about full-height">
     <HeroImg image="/assets/img/index.jpg" :title="$t('about.title')"/>
 
     <div class="container">
       <div class="text-left simple-text" v-html="$t('about.text')"></div>
     </div>
-  </div>
+  </section>
 </template>
 
 <i18n>

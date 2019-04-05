@@ -1,7 +1,7 @@
 <template>
-  <div class="contact">
+  <section class="contact full-height">
     <HeroImg image="/assets/img/contact.jpg" :title="$t('contact.title')"/>
-  </div>
+  </section>
 </template>
 
 <i18n>

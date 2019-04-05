@@ -1,40 +1,40 @@
 <template>
   <div id="app">
-    <!-- <vue-particles
-      color="#000"
-      :particleOpacity="0.7"
-      :particlesNumber="80"
-      shapeType="circle"
-      :particleSize="4"
-      linesColor="#dedede"
-      :linesWidth="1"
-      :lineLinked="true"
-      :lineOpacity="0.4"
-      :linesDistance="150"
-      :moveSpeed="3"
-      :hoverEffect="true"
-      hoverMode="grab"
-      :clickEffect="true"
-      clickMode="push"
-    ></vue-particles>-->
-
     <header class="header-main">
       <div class="brand">
         <a href="https://radoslavtomas.com">
           <img :src="logo" alt="logo" @mouseenter="logo = logo2" @mouseleave="logo = logo1">
         </a>
-        <span>Radoslav Tomas</span>
+        <span>{{ $t('app.name') }}</span>
       </div>
 
       <Navigation/>
     </header>
 
     <router-view/>
+
+    <Footer/>
   </div>
 </template>
 
+<i18n>
+{
+  "en": {
+    "app": {
+      "name": "Radoslav Tomas"
+    }
+  },
+  "sk": {
+    "app": {
+      "name": "Radoslav Tomáš"
+    }
+  }
+}
+</i18n>
+
 <script>
 import Navigation from "@/components/Navigation.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   data() {
@@ -46,7 +46,8 @@ export default {
   },
 
   components: {
-    Navigation
+    Navigation,
+    Footer
   }
 };
 </script>
@@ -54,10 +55,14 @@ export default {
 #50a5a9
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Poiret+One|Fira+Sans:400,500");
+::selection {
+  background: #f1de7c;
+}
 body {
   margin: 0;
-  min-height: 100vh;
-  // background-image: linear-gradient(to top, #badec1, #93d4ef);
+}
+.full-height {
+  min-height: calc(100vh - 90px);
 }
 #app {
   font-family: "Fira Sans", sans-serif;
@@ -73,7 +78,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  // background-color: #bada55;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 0px 11px rgba(0, 0, 0, 0.09), 0 1px 1px rgba(0, 0, 0, 0.09);
 }
 .brand {
   display: flex;

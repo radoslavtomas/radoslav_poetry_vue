@@ -1,7 +1,7 @@
 <template>
-  <div class="links">
-    <HeroImg :title="$t('links.title')" image="/assets/img/links.jpg"/>
-  </div>
+  <section class="links full-height">
+    <HeroImg :title="$t('links.title')" image="/assets/img/links-2.jpg"/>
+  </section>
 </template>
 
 <i18n>
