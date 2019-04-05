@@ -14,7 +14,8 @@
       <Localization/>
     </div>
     <div class="hamburger" @click="open = !open">
-      <i class="fa fa-2x" :class="{ 'fa-times':open, 'fa-bars':!open }"></i>
+      <font-awesome-icon v-if="open" icon="times" size="2x"/>
+      <font-awesome-icon v-else icon="bars" size="2x"/>
     </div>
   </nav>
 </template>
