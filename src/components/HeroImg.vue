@@ -19,7 +19,7 @@ export default {
   max-width: 800px;
   height: 200px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
 
   span {
@@ -27,9 +27,9 @@ export default {
     font-weight: 600;
     font-size: 22px;
     font-family: "Poiret One", cursive;
-    margin-left: 30px;
+    margin-right: 50px;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 </style>
