@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header class="header-main">
+    <header class="header-main" :class="page">
       <div class="brand">
         <a href="https://radoslavtomas.com">
           <img :src="logo" alt="logo" @mouseenter="logo = logo2" @mouseleave="logo = logo1">
@@ -41,10 +41,25 @@ export default {
     return {
       logo: "/assets/img/logo-1.png",
       logo1: "/assets/img/logo-1.png",
-      logo2: "/assets/img/logo-2.png"
+      logo2: "/assets/img/logo-2.png",
+      page: ""
     };
   },
-
+  created() {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.fetchPath();
+  },
+  watch: {
+    // call again the method if the route changes
+    $route: "fetchPath"
+  },
+  methods: {
+    fetchPath() {
+      let path = this.$route.path.split("/")[1];
+      this.page = path ? path : "home";
+    }
+  },
   components: {
     Navigation,
     Footer
@@ -61,8 +76,12 @@ export default {
 body {
   margin: 0;
 }
+section {
+  padding-top: 50px;
+  background-color: #ffffff;
+}
 .full-height {
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh - 140px);
 }
 #app {
   font-family: "Fira Sans", sans-serif;
@@ -80,6 +99,56 @@ body {
   padding: 20px;
   border-bottom: 1px solid #ccc;
   box-shadow: 0 0px 11px rgba(0, 0, 0, 0.09), 0 1px 1px rgba(0, 0, 0, 0.09);
+  &.home {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0, #56b085),
+      color-stop(0.5, #d6d69e),
+      color-stop(1, #78c7c9)
+    );
+  }
+  &.about {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0, #79b2d6),
+      color-stop(0.5, #d4da6b),
+      color-stop(1, #93f9ea)
+    );
+  }
+  &.books {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0, #f4dbab),
+      color-stop(0.5, #f4b4bd),
+      color-stop(1, #cac8cf)
+    );
+  }
+  &.links {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0, #ef4252),
+      color-stop(0.5, #bfc3c5),
+      color-stop(1, #eaac84)
+    );
+  }
+  &.contact {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0, #e4dd9e),
+      color-stop(0.5, #a7cab8),
+      color-stop(1, #efa7ca)
+    );
+  }
 }
 .brand {
   display: flex;
@@ -106,14 +175,6 @@ body {
       display: none;
     }
   }
-}
-#particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: calc(100vh - 94px);
-  z-index: 1;
 }
 
 .btn {

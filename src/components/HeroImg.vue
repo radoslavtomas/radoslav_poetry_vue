@@ -15,7 +15,7 @@ export default {
 
 <style scoped lang="scss">
 .hero-img {
-  margin: 50px auto 0 auto;
+  margin: 0 auto;
   max-width: 800px;
   height: 200px;
   display: flex;

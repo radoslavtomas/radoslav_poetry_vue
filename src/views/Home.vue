@@ -12,7 +12,7 @@
         :lineLinked="true"
         :lineOpacity="0.6"
         :linesDistance="150"
-        :moveSpeed="5"
+        :moveSpeed="4"
       ></vue-particles>
 
       <div class="main-title gradient">{{ $t("home.name") }}</div>
@@ -68,10 +68,18 @@ export default {
   justify-content: center;
   flex-direction: column;
 }
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 140px);
+  z-index: 1;
+}
 .main-title {
   font-size: 54px;
   font-weight: 600;
-  padding: 70px 15px 0 15px;
+  padding: 20px 15px 0 15px;
   margin: 0;
   font-family: "Poiret One", cursive;
   position: relative;
