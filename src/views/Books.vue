@@ -3,12 +3,18 @@
     <HeroImg image="/assets/img/books.jpg" :title="$t('books.title')"/>
 
     <article class="book-preview" v-for="book in books" :key="book.id">
-      <h3>
-        {{ $t(book.title) }}
-        <small>({{ book.year }})</small>
-      </h3>
-      <p>{{ $t(book.desc) }}</p>
-      <img :src="book.img" :alt="$t(book.title)">
+      <div class="book-info">
+        <a href="#" :id="'book-' + book.id">
+          <h3>
+            {{ $t(book.title) }}
+            <small>({{ book.year }})</small>
+          </h3>
+        </a>
+        <p>{{ $t(book.desc) }}</p>
+      </div>
+      <a href="#" class="book-cover">
+        <img :src="book.img" :alt="$t(book.title)">
+      </a>
     </article>
   </section>
 </template>
@@ -80,6 +86,63 @@ export default {
 <style lang="scss" scoped>
 .books {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23aeaeae' fill-opacity='0.20'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.book-preview {
+  max-width: 800px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &:last-child {
+    padding-bottom: 40px;
+  }
+
+  .book-info {
+    text-align: left;
+    margin: 0 30px 0 0;
+    padding: 10px;
+    // color: #fff;
+    background-color: rgba(205, 203, 211, 0.3);
+    border: 1px solid #d2d2d2;
+    box-shadow: 0 0px 11px rgba(0, 0, 0, 0.09), 0 1px 1px rgba(0, 0, 0, 0.09);
+
+    h3 {
+      margin-top: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    #book-1 {
+      color: #d6a1c1;
+    }
+
+    #book-2 {
+      color: #939686;
+    }
+
+    #book-3 {
+      color: #5184b8;
+    }
+  }
+
+  .book-cover {
+    display: inline-block;
+    width: 300px;
+    height: 500px;
+    box-shadow: 0 0px 11px rgba(0, 0, 0, 0.29), 0 1px 1px rgba(0, 0, 0, 0.09);
+  }
+
+  @media (max-width: 900px) {
+    display: block;
+
+    .book-info {
+      margin: 0 20px 30px 20px;
+      text-align: center;
+    }
+  }
 }
 </style>
 

@@ -73,6 +73,10 @@ export default {
 ::selection {
   background: #f1de7c;
 }
+*,
+html {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
 }
@@ -219,8 +223,8 @@ section {
 }
 .container {
   margin: 0 auto;
-  max-width: 500px;
-  padding: 15px;
+  max-width: 550px;
+  padding: 10px;
 }
 .text-left {
   text-align: left;
