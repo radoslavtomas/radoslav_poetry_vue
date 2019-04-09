@@ -2,7 +2,12 @@
   <section class="contact full-height">
     <HeroImg image="/assets/img/contact.jpg" :title="$t('contact.title')"/>
 
-    <form action="#" method="POST" class="container" ref="contactForm">
+    <form
+      action="https://formspree.io/radoslav.tomas@gmail.com"
+      method="POST"
+      class="container"
+      ref="contactForm"
+    >
       <input
         id="name"
         type="text"
@@ -36,10 +41,11 @@
         v-model="message"
         @blur="validateMessage"
       ></textarea>
-      <div class="error">
+      <div v-if="messageError" class="error">
         <small>{{ $t('contact.message_error') }}</small>
       </div>
-      <button id="submit" class="btn" @click="submitForm">Send</button>
+      <input type="hidden" name="eel" v-model="eel">
+      <button id="formBtn" class="btn" @click.prevent="submitForm">Send</button>
     </form>
   </section>
 </template>
@@ -85,7 +91,8 @@ export default {
       emailError: false,
       emailError2: false,
       message: "",
-      messageError: false
+      messageError: false,
+      eel: ""
     };
   },
   methods: {
@@ -107,7 +114,7 @@ export default {
         return true;
       }
     },
-    validateEmail(val) {
+    validateEmail() {
       if (this.email.length == 0) {
         this.emailError = true;
         this.emailError2 = false;
@@ -125,8 +132,26 @@ export default {
         return true;
       }
     },
+    validateHoneycomb() {
+      if (this.eel.length > 0) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    submitForm() {
+      const name = this.validateName();
+      const email = this.validateEmail();
+      const message = this.validateMessage();
+      const honeycomb = this.validateHoneycomb();
 
-    submitForm() {}
+      if (name && email && message && honeycomb) {
+        // console.log(this.$refs.contactForm);
+        this.$refs.contactForm.submit();
+      } else {
+        return false;
+      }
+    }
   },
   computed: {
     validName() {
@@ -174,7 +199,7 @@ form {
     height: 120px;
   }
 
-  #submit {
+  #formBtn {
     cursor: pointer;
     margin: 30px 0 40px 0;
   }
