@@ -3,7 +3,7 @@
     <HeroImg image="/assets/img/books.jpg" :title="$t('books.title')"/>
 
     <article class="book-preview" v-for="book in books" :key="book.id">
-      <div class="book-info">
+      <div class="book-info custom-bg">
         <router-link :to="book.link" :id="'book-' + book.id">
           <h3>
             {{ $t(book.title) }}
@@ -12,9 +12,9 @@
         </router-link>
         <p>{{ $t(book.desc) }}</p>
       </div>
-      <a href="#" class="book-cover">
+      <router-link :to="book.link" class="book-cover">
         <img :src="book.img" :alt="$t(book.title)">
-      </a>
+      </router-link>
     </article>
   </section>
 </template>
@@ -67,7 +67,7 @@ export default {
           year: "2009",
           desc: "books.wolf_text",
           img: "/assets/img/covers/wolves_weddings_cover.png",
-          link: "#"
+          link: "books/wolves-weddings"
         },
         {
           id: "3",
@@ -75,7 +75,7 @@ export default {
           year: "2005",
           desc: "books.boy_text",
           img: "/assets/img/covers/boy_cover.png",
-          link: "/books/status-reports"
+          link: "/books/boy"
         }
       ]
     };
@@ -105,10 +105,6 @@ export default {
     text-align: left;
     margin: 0 30px 0 0;
     padding: 10px;
-    // color: #fff;
-    background-color: rgba(205, 203, 211, 0.3);
-    border: 1px solid #d2d2d2;
-    box-shadow: 0 0px 11px rgba(0, 0, 0, 0.09), 0 1px 1px rgba(0, 0, 0, 0.09);
 
     h3 {
       margin-top: 0;

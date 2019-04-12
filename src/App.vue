@@ -56,8 +56,12 @@ export default {
   },
   methods: {
     fetchPath() {
-      let path = this.$route.path.split("/")[1];
-      this.page = path ? path : "home";
+      let path = this.$route.path.split("/");
+      if (path[2]) {
+        this.page = path[2];
+      } else {
+        this.page = path[1] ? path[1] : "home";
+      }
     }
   },
   components: {
@@ -165,6 +169,36 @@ section {
       color-stop(1, #efa7ca)
     );
   }
+  &.status-reports {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0, #f4dbab),
+      color-stop(0.5, #f4b4bd),
+      color-stop(1, #cac8cf)
+    );
+  }
+  &.wolves-weddings {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0, #f4dbab),
+      color-stop(0.5, #b4f4b9),
+      color-stop(1, #f7f5fd)
+    );
+  }
+  &.boy {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0, #c5d4df),
+      color-stop(0.5, #e3eaef),
+      color-stop(1, #79b7b1)
+    );
+  }
 }
 .brand {
   display: flex;
@@ -241,7 +275,13 @@ section {
 .text-left {
   text-align: left;
 }
+.custom-bg {
+  background-color: rgba(205, 203, 211, 0.3);
+  border: 1px solid #d2d2d2;
+  box-shadow: 0 0px 11px rgba(0, 0, 0, 0.09), 0 1px 1px rgba(0, 0, 0, 0.09);
+}
 .simple-text {
+  padding-bottom: 30px;
   p {
     font-weight: 400;
     font-size: 18px;
@@ -250,10 +290,14 @@ section {
     margin-block-end: 1.2em;
   }
 
+  h5 {
+    margin-bottom: 10px;
+  }
+
   a {
-    color: #b969a0;
+    color: #6eb1b1;
     &:hover {
-      color: darken(#b969a0, 5%);
+      color: darken(#6eb1b1, 5%);
     }
   }
 }

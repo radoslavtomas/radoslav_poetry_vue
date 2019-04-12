@@ -6,7 +6,7 @@
         <a href="mailto:radoslav.tomas@gmail.com">
           <img src="/assets/img/M_icon.svg" alt="Mail" class="m-icon">
         </a>
-        <a href="https://www.facebook.com/radoslav.tomas">
+        <a target="_blank" href="https://www.facebook.com/radoslav.tomas">
           <img src="/assets/img/F_icon.svg" alt="Facebook">
         </a>
       </div>

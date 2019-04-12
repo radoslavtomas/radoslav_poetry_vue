@@ -5,6 +5,8 @@ import Books from "./views/Books.vue";
 import Links from "./views/Links.vue";
 import Contact from "./views/Contact.vue";
 import StatusReports from "./views/StatusReports.vue";
+import WolvesWeddings from "./views/WolvesWeddings.vue";
+import Boy from "./views/Boy.vue";
 
 Vue.use(Router);
 
@@ -49,6 +51,17 @@ export default new Router({
       name: "status-reports",
       component: () =>
         import(/* webpackChunkName: "status" */ "./views/StatusReports.vue")
+    },
+    {
+      path: "/books/wolves-weddings",
+      name: "wolves-weddings",
+      component: () =>
+        import(/* webpackChunkName: "wolves" */ "./views/WolvesWeddings.vue")
+    },
+    {
+      path: "/books/boy",
+      name: "boy",
+      component: () => import(/* webpackChunkName: "boy" */ "./views/Boy.vue")
     }
   ]
 });

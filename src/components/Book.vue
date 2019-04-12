@@ -6,16 +6,16 @@
     </h3>
     <div class="float-wrapper clearfix">
       <div class="book-cover">
-        <img class="book-cover" :src="cover" alt="Book Cover">
+        <img :src="cover" alt="Book Cover">
       </div>
-      <div class="book-about">
+      <div class="book-about custom-bg">
         <h3 id="title-desktop">
           {{ title }}
           <small>({{ year }})</small>
         </h3>
         <p class="book-desc" v-html="desc"></p>
         <div class="book-cta">
-          <a class="btn" href="#">{{ $t('book.pdf') }}</a>
+          <a download class="btn" :href="pdf">{{ $t('book.pdf') }}</a>
           <a v-if="buy" class="btn" :href="buy">{{ $t('book.buy') }}</a>
         </div>
         <div class="book-poems" :class="{ center:center }">
@@ -71,6 +71,9 @@ export default {
         this.center = true;
       }
     }
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   }
 };
 </script>
@@ -87,25 +90,25 @@ h3 {
 .float-wrapper {
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 10px 50px 10px;
 
   .book-cover {
     max-width: 300px;
+    padding: 0 15px 15px 15px;
     float: left;
 
     img {
       width: 100%;
+      box-shadow: 0 0px 11px rgba(0, 0, 0, 0.29), 0 1px 1px rgba(0, 0, 0, 0.09);
     }
   }
 
   .book-about {
     margin-left: 25px;
     text-align: left;
-    max-width: 475px;
+    max-width: 455px;
     float: right;
     padding: 10px;
-    background-color: rgba(205, 203, 211, 0.3);
-    border: 1px solid #d2d2d2;
-    box-shadow: 0 0px 11px rgba(0, 0, 0, 0.09), 0 1px 1px rgba(0, 0, 0, 0.09);
   }
 
   .book-desc {
@@ -117,6 +120,20 @@ h3 {
     text-align: center;
     a:last-child {
       margin-left: 10px;
+    }
+
+    a {
+      @media (max-width: 500px) {
+        display: block;
+        margin: 0 0 20px 0;
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    @media (max-width: 500px) {
+      padding: 40px 0 10px 0;
     }
   }
 
@@ -133,7 +150,11 @@ h3 {
     .book-about {
       float: none;
       margin: 0 auto;
-      padding: 0 10px;
+      //padding: 0 10px;
+    }
+
+    .book-about {
+      margin-top: 10px;
     }
   }
 }

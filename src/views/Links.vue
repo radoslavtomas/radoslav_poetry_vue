@@ -1,6 +1,35 @@
 <template>
   <section class="links full-height">
     <HeroImg :title="$t('links.title')" image="/assets/img/links-2.jpg"/>
+    <br>
+    <br>
+    <div class="container">
+      <div class="links-wrapper simple-text custom-bg">
+        <h5>sme.sk</h5>
+        <a
+          target="_blank"
+          href="https://mytrnava.sme.sk/c/5608088/to-ze-rozmyslam-nad-basnami-zo-mna-nerobi-lepsieho-cloveka.html"
+        >{{ $t('links.sme') }}</a>
+
+        <h5>litcentrum.sk</h5>
+        <a
+          target="_blank"
+          href="http://www.litcentrum.sk/slovenski-spisovatelia/radoslav-tomas"
+        >{{ $t('links.litcentrum') }}</a>
+
+        <h5>martinus.sk</h5>
+        <a
+          target="_blank"
+          href="http://blog.martinus.sk/2010/11/radoslav-tomas-poezia-nie-je-ziskova-je-to-zalezitost-mensiny"
+        >{{ $t('links.martinus') }}</a>
+
+        <h5>krajinaknih.blogspot.co.uk</h5>
+        <a
+          target="_blank"
+          href="http://krajinaknih.blogspot.com/2016/04/statusove-hlasenia-radoslav-tomas.html"
+        >{{ $t('links.krajinaknih') }}</a>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -8,12 +37,20 @@
 {
   "en": {
     "links": {
-      "title": "Links"
+      "title": "Links",
+      "sme": "I am not better person just because I think about poetry (SK)",
+      "litcentrum": "Profile in The Centre for Information on Literature",
+      "martinus": "Poetry is not a business, it matters only to minority (SK)",
+      "krajinaknih": "Status reports (Radoslav Tomas) (SK)"
     }
   },
   "sk": {
     "links": {
-      "title": "Odkazy"
+      "title": "Odkazy",
+      "sme": "To, že rozmýšľam nad básňami, zo mňa nerobí lepšieho človeka",
+      "litcentrum": "Profil autora",
+      "martinus": "Poézia nie je zisková, je to záležitosť menšiny",
+      "krajinaknih": "Poézia nie je zisková, je to záležitosť menšiny"
     }
   }
 }

@@ -186,6 +186,7 @@ form {
     font-family: "Fira Sans", sans-serif;
     font-size: 16px;
     border: 1px solid #929292;
+    box-shadow: 0 0px 11px rgba(0, 0, 0, 0.09), 0 1px 1px rgba(0, 0, 0, 0.09);
   }
 
   input:first-child {
