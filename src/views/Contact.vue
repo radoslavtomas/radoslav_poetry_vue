@@ -15,6 +15,7 @@
         name="name"
         :placeholder="$t('contact.name')"
         v-model="name"
+        :class="{ 'error-border':nameError }"
       >
       <div v-if="nameError" class="error">
         <small>{{ $t('contact.name_error') }}</small>
@@ -27,6 +28,7 @@
         @blur="validateEmail"
         :placeholder="$t('contact.email')"
         v-model="email"
+        :class="{ 'error-border':emailError }"
       >
       <div v-if="emailError" class="error">
         <small>{{ $t('contact.email_error') }}</small>
@@ -40,6 +42,7 @@
         :placeholder="$t('contact.message')"
         v-model="message"
         @blur="validateMessage"
+        :class="{ 'error-border':messageError }"
       ></textarea>
       <div v-if="messageError" class="error">
         <small>{{ $t('contact.message_error') }}</small>
@@ -190,8 +193,12 @@ form {
   }
   .error {
     text-align: left;
-    color: red;
+    color: #d60505;
     margin: 5px 0 0 0;
+  }
+
+  .error-border {
+    border: 1px solid #d60505;
   }
 
   textarea {
@@ -202,6 +209,7 @@ form {
   #formBtn {
     cursor: pointer;
     margin: 30px 0 40px 0;
+    outline: none;
   }
 }
 </style>

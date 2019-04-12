@@ -80,11 +80,23 @@ html {
 body {
   margin: 0;
 }
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
 section {
   padding-top: 50px;
   background-color: #ffffff;
 }
 .full-height {
+  position: relative;
   min-height: calc(100vh - 140px);
 }
 #app {

@@ -4,12 +4,12 @@
 
     <article class="book-preview" v-for="book in books" :key="book.id">
       <div class="book-info">
-        <a href="#" :id="'book-' + book.id">
+        <router-link :to="book.link" :id="'book-' + book.id">
           <h3>
             {{ $t(book.title) }}
             <small>({{ book.year }})</small>
           </h3>
-        </a>
+        </router-link>
         <p>{{ $t(book.desc) }}</p>
       </div>
       <a href="#" class="book-cover">
@@ -58,21 +58,24 @@ export default {
           title: "books.status",
           year: "2011",
           desc: "books.status_text",
-          img: "/assets/img/covers/status_reports_cover.png"
+          img: "/assets/img/covers/status_reports_cover.png",
+          link: "/books/status-reports"
         },
         {
           id: "2",
           title: "books.wolf",
           year: "2009",
           desc: "books.wolf_text",
-          img: "/assets/img/covers/wolves_weddings_cover.png"
+          img: "/assets/img/covers/wolves_weddings_cover.png",
+          link: "#"
         },
         {
           id: "3",
           title: "books.boy",
           year: "2005",
           desc: "books.boy_text",
-          img: "/assets/img/covers/boy_cover.png"
+          img: "/assets/img/covers/boy_cover.png",
+          link: "/books/status-reports"
         }
       ]
     };

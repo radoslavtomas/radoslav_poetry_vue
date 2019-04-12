@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import Books from "./views/Books.vue";
 import Links from "./views/Links.vue";
 import Contact from "./views/Contact.vue";
+import StatusReports from "./views/StatusReports.vue";
 
 Vue.use(Router);
 
@@ -29,19 +30,25 @@ export default new Router({
       path: "/books",
       name: "books",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Books.vue")
+        import(/* webpackChunkName: "books" */ "./views/Books.vue")
     },
     {
       path: "/links",
       name: "links",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Links.vue")
+        import(/* webpackChunkName: "links" */ "./views/Links.vue")
     },
     {
       path: "/contact",
       name: "contact",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Contact.vue")
+        import(/* webpackChunkName: "contact" */ "./views/Contact.vue")
+    },
+    {
+      path: "/books/status-reports",
+      name: "status-reports",
+      component: () =>
+        import(/* webpackChunkName: "status" */ "./views/StatusReports.vue")
     }
   ]
 });

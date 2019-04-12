@@ -1,20 +1,20 @@
 <template>
   <section class="full-height">
-    <div class="home">
-      <vue-particles
-        color="#fff"
-        :particleOpacity="0.7"
-        :particlesNumber="120"
-        shapeType="circle"
-        :particleSize="4"
-        linesColor="#dedede"
-        :linesWidth="3"
-        :lineLinked="true"
-        :lineOpacity="0.6"
-        :linesDistance="150"
-        :moveSpeed="4"
-      ></vue-particles>
+    <vue-particles
+      color="#fff"
+      :particleOpacity="0.7"
+      :particlesNumber="120"
+      shapeType="circle"
+      :particleSize="4"
+      linesColor="#dedede"
+      :linesWidth="3"
+      :lineLinked="true"
+      :lineOpacity="0.6"
+      :linesDistance="150"
+      :moveSpeed="4"
+    ></vue-particles>
 
+    <div class="home">
       <div class="main-title gradient">{{ $t("home.name") }}</div>
       <span class="sub-title">{{ $t("home.desc") }}</span>
       <span class="home-cta">
