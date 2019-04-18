@@ -62,6 +62,12 @@ export default new Router({
       path: "/books/boy",
       name: "boy",
       component: () => import(/* webpackChunkName: "boy" */ "./views/Boy.vue")
+    },
+    {
+      path: "/add-poem",
+      name: "addPoem",
+      component: () =>
+        import(/* webpackChunkName: "addPoem" */ "./views/AddPoem.vue")
     }
   ]
 });
